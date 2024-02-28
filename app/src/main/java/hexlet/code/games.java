@@ -143,4 +143,53 @@ public class games {
             }
         }
     }
+
+    public static void progression() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("May I have your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+
+        System.out.println("What number is missing in the progression?");
+        System.out.println("Question: 5 7 9 11 13 .. 17 19 21 23");
+        System.out.print("Your answer: ");
+        int answer = scanner.nextInt();
+
+        while (true) {
+            if (answer == 15) {
+                System.out.println("Correct!");
+                System.out.println("Question: 2 5 8 .. 14 17 20 23 26 29");
+                System.out.print("Your answer: ");
+                answer = scanner.nextInt();
+
+                if (answer == 11) {
+                    System.out.println("Correct!");
+                    System.out.println("Question: 14 19 24 29 34 39 44 49 54 ..");
+                    System.out.print("Your answer: ");
+                    answer = scanner.nextInt();
+
+                    if (answer == 59) {
+                        System.out.println("Correct!");
+                        System.out.println("Congratulations, " + name + "!");
+                        break;
+
+                    } else if (answer != 59) {
+                        System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '59'.\n" +
+                                "Let's try again, " + name + "!");
+                        break;
+                    }
+
+                } else if (answer != 11) {
+                    System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '11'.\n" +
+                            "Let's try again, " + name + "!");
+                    break;
+                }
+
+            } else if (answer != 15) {
+                System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '15'.\n" +
+                        "Let's try again, " + name + "!");
+                break;
+            }
+        }
+    }
 }
