@@ -192,4 +192,53 @@ public class games {
             }
         }
     }
+
+    public static void prime() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("May I have your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println("Question: 7");
+        System.out.print("Your answer: ");
+        String answer = scanner.nextLine();
+
+        while (true) {
+            if (answer.equals("yes")) {
+                System.out.println("Correct!");
+                System.out.println("Question: 211");
+                System.out.print("Your answer: ");
+                answer = scanner.nextLine();
+
+                if (answer.equals("yes")){
+                    System.out.println("Correct!");
+                    System.out.println("Question: 240");
+                    System.out.print("Your answer: ");
+                    answer = scanner.nextLine();
+
+                    if (answer.equals("no")) {
+                        System.out.println("Correct!");
+                        System.out.println("Congratulations, " + name + "!");
+                        break;
+
+                    } else if (answer.equals("yes")) {
+                        System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
+                                "Let's try again, " + name + "!");
+                        break;
+                    }
+
+                } else if (answer.equals("no")) {
+                    System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
+                            "Let's try again, " + name + "!");
+                    break;
+                }
+
+            } else if (answer.equals("no")) {
+                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
+                        "Let's try again, " + name + "!");
+                break;
+            }
+        }
+    }
 }
