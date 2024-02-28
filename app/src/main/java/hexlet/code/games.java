@@ -94,4 +94,53 @@ public class games {
             }
         }
     }
+
+    public static void gcd() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("May I have your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+
+        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println("Question: 25 50");
+        System.out.print("Your answer: ");
+        int answer = scanner.nextInt();
+
+        while (true) {
+            if (answer == 25) {
+                System.out.println("Correct!");
+                System.out.println("Question: 100 52");
+                System.out.print("Your answer: ");
+                answer = scanner.nextInt();
+
+                if (answer == 4) {
+                    System.out.println("Correct!");
+                    System.out.println("Question: 3 9");
+                    System.out.print("Your answer: ");
+                    answer = scanner.nextInt();
+
+                    if (answer == 3) {
+                        System.out.println("Correct!");
+                        System.out.println("Congratulations, " + name + "!");
+                        break;
+
+                    } else if (answer != 3) {
+                        System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '3'.\n" +
+                                "Let's try again, " + name + "!");
+                        break;
+                    }
+
+                } else if (answer != 4) {
+                    System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '4'.\n" +
+                            "Let's try again, " + name + "!");
+                    break;
+                }
+
+            } else if (answer != 25) {
+                System.out.println("'"+ answer + "'" + " is wrong answer ;(. Correct answer was '25'.\n" +
+                        "Let's try again, " + name + "!");
+                break;
+            }
+        }
+    }
 }
