@@ -3,7 +3,7 @@
 <a href="https://codeclimate.com/github/percivalzahringer/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/703470a279c933994be1/maintainability" /></a>
 
 <a/></a>
-<![image](https://github.com/percivalzahringer/java-project-61/assets/106011985/70e5fd64-7117-46c0-9f70-00ae80c3c7f4)
+![image](https://github.com/percivalzahringer/java-project-61/assets/106011985/70e5fd64-7117-46c0-9f70-00ae80c3c7f4)
 
 <a/>Choice: 1</a>
 ![image](https://github.com/percivalzahringer/java-project-61/assets/106011985/a62d957d-6c8e-40aa-a62f-cc953e1b9e2e)
