@@ -14,11 +14,6 @@ public class App {
         switch (option) {
             case "0" -> System.out.println("Exit");
             case "1" -> Cli.greetings();
-//            case "2" ->
-//            case "3" ->
-//            case "4" ->
-//            case "5" ->
-//            case "6" ->
             default -> System.out.println("Invalid value entered");
         }
     }
