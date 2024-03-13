@@ -7,7 +7,7 @@ public class Calc {
     public static final String TASK = "What is the result of the expression?";
     public static final int MIN = 0;
     public static final int MAX = 100;
-    public static final int ROUNDS_COUNT = 10;
+    public static final int ROUNDS_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
     public static final int MAX_OPERATION = 3;

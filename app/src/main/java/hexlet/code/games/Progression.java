@@ -6,7 +6,7 @@ import hexlet.code.Generator;
 public class Progression {
     public static final String TASK = "What number is missing in the progression?";
     public static final int MIN = 0;
-    public static final int ROUND_COUNT = 10;
+    public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
     public static final int MIN_SIZE_ARRAY = 5;

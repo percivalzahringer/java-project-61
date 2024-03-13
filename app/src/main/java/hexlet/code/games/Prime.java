@@ -7,7 +7,7 @@ public class Prime {
     public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int MIN = 2;
     public static final int MAX = 1009;
-    public static final int ROUND_COUNT = 10;
+    public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
 

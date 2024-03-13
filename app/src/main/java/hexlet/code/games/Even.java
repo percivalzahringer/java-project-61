@@ -7,7 +7,7 @@ public class Even {
     public static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static final int MIN = 0;
     public static final int MAX = 100;
-    public static final int ROUND_COUNT = 10;
+    public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
 
