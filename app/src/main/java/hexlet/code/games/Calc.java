@@ -19,7 +19,6 @@ public class Calc {
             var firstNumber = Generator.getRandomInt(MIN, MAX);
             var secondNumber = Generator.getRandomInt(MIN, MAX);
             char operator = operation[Generator.getRandomInt(MIN, MAX_OPERATION)];
-//            var operation = generateOperation();
             rounds[i][QUESTION] = generateOperation(firstNumber, operator, secondNumber);
             rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operator);
         }
@@ -41,7 +40,7 @@ public class Calc {
                 break;
             default:
                 throw new RuntimeException("Unknown input: " + operator);
-        };
+        }
         return result;
     }
     private static String calculate(int firstNumber, int secondNumber, char operator) {

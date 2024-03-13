@@ -16,7 +16,8 @@ public class GCD {
             var numberOne = Generator.getRandomInt(MIN, MAX);
             var numberTwo = Generator.getRandomInt(MIN, MAX);
             rounds[i][QUESTION] = numberOne + " " + numberTwo;
-            int answer = numberOne > numberTwo ? calculateGSD(numberOne, numberTwo) : calculateGSD(numberTwo, numberOne);
+            int answer = numberOne > numberTwo ? calculateGSD(numberOne, numberTwo) :
+                    calculateGSD(numberTwo, numberOne);
             rounds[i][ANSWER] = Integer.valueOf(answer).toString();
         }
         Engine.engine(TASK, rounds);
