@@ -16,18 +16,16 @@ public class GCD {
             var numberOne = Generator.getRandomInt(MIN, MAX);
             var numberTwo = Generator.getRandomInt(MIN, MAX);
             rounds[i][QUESTION] = numberOne + " " + numberTwo;
-            rounds[i][ANSWER] = calculateGSD(numberOne, numberTwo);
+            int answer = numberOne > numberTwo ? calculateGSD(numberOne, numberTwo) : calculateGSD(numberTwo, numberOne);
+            rounds[i][ANSWER] = Integer.valueOf(answer).toString();
         }
         Engine.engine(TASK, rounds);
     }
 
-    private static String calculateGSD(int numberOne, int numberTwo) {
-        var gcd = 1;
-        for (int i = 1; i <= numberOne && i <= numberTwo; i++) {
-            if (numberOne % i == 0 && numberTwo % i == 0) {
-                gcd = i;
-            }
+    private static int calculateGSD(int numberOne, int numberTwo) {
+        if (numberTwo == 0) {
+            return numberOne;
         }
-        return Integer.toString(gcd);
+        return calculateGSD(numberTwo, numberOne % numberTwo);
     }
 }

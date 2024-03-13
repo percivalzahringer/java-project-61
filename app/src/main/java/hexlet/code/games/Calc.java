@@ -13,40 +13,53 @@ public class Calc {
     public static final int MAX_OPERATION = 3;
     public static void playCalc() {
         String[][] rounds = new String[ROUNDS_COUNT][2];
+        char[] operation = new char[] {'+', '-', '*'};
+
         for (int i = 0; i < rounds.length; i++) {
             var firstNumber = Generator.getRandomInt(MIN, MAX);
             var secondNumber = Generator.getRandomInt(MIN, MAX);
-            var operation = generateOperation();
-            rounds[i][QUESTION] = firstNumber + " " + operation + " " + secondNumber;
-            rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operation);
+            char operator = operation[Generator.getRandomInt(MIN, MAX_OPERATION)];
+//            var operation = generateOperation();
+            rounds[i][QUESTION] = generateOperation(firstNumber, operator, secondNumber);
+            rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operator);
         }
         Engine.engine(TASK, rounds);
     }
 
-    private static String generateOperation() {
-        var operation = Generator.getRandomInt(MIN, MAX_OPERATION);
-        return switch (operation) {
-            case 0:
-                yield "+";
-            case 1:
-                yield "-";
-            case 2:
-                yield "*";
+    private static String generateOperation(int firstNumber, char operator, int secondNumber) {
+        String result;
+
+        switch (operator) {
+            case '+':
+                result = firstNumber + " + " + secondNumber;
+                break;
+            case '-':
+                result = firstNumber + " - " + secondNumber;
+                break;
+            case '*':
+                result = firstNumber + " * " + secondNumber;
+                break;
             default:
-                yield null;
+                throw new RuntimeException("Unknown input: " + operator);
         };
+        return result;
     }
-    private static String calculate(int firstNumber, int secondNumber, String operation) {
-        var result = switch (operation) {
-            case "+":
-                yield firstNumber + secondNumber;
-            case "-":
-                yield firstNumber - secondNumber;
-            case "*":
-                yield firstNumber * secondNumber;
+    private static String calculate(int firstNumber, int secondNumber, char operator) {
+        String result;
+
+        switch (operator) {
+            case '+':
+                result = Integer.valueOf(firstNumber + secondNumber).toString();
+                break;
+            case '-':
+                result = Integer.valueOf(firstNumber - secondNumber).toString();
+                break;
+            case '*':
+                result = Integer.valueOf(firstNumber * secondNumber).toString();
+                break;
             default:
-                yield 0;
-        };
-        return Integer.toString(result);
+                throw new RuntimeException("Unknown input: " + operator);
+        }
+        return  result;
     }
 }
