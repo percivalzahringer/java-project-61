@@ -7,12 +7,11 @@ public class Prime {
     public static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int MIN = 2;
     public static final int MAX = 1009;
-    public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
 
     public static void playIsPrime() {
-        String[][] rounds = new String[ROUND_COUNT][2];
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var number = Generator.getRandomInt(MIN, MAX);
             var isNumberPrime = isPrime(number);
@@ -22,7 +21,10 @@ public class Prime {
         Engine.engine(TASK, rounds);
     }
     private static boolean isPrime(int number) {
-        for (int i = 2; (i * i) <= number; i++) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }

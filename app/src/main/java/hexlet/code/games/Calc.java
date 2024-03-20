@@ -7,12 +7,11 @@ public class Calc {
     public static final String TASK = "What is the result of the expression?";
     public static final int MIN = 0;
     public static final int MAX = 100;
-    public static final int ROUNDS_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
     public static final int MAX_OPERATION = 3;
     public static void playCalc() {
-        String[][] rounds = new String[ROUNDS_COUNT][2];
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         char[] operation = new char[] {'+', '-', '*'};
 
         for (int i = 0; i < rounds.length; i++) {

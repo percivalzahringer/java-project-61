@@ -6,7 +6,6 @@ import hexlet.code.Generator;
 public class Progression {
     public static final String TASK = "What number is missing in the progression?";
     public static final int MIN = 0;
-    public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
     public static final int MIN_SIZE_ARRAY = 5;
@@ -16,7 +15,7 @@ public class Progression {
     public static final int MAX_STEP = 11;
 
     public static void playMissingNumber() {
-        String[][] rounds = new String[ROUND_COUNT][2];
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var arraySize = Generator.getRandomInt(MIN_SIZE_ARRAY, MAX_SIZE_ARRAY);
             var step = Generator.getRandomInt(MIN_STEP, MAX_STEP);
