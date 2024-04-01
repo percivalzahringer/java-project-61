@@ -19,7 +19,7 @@ public class GCD {
                     : calculateGSD(numberTwo, numberOne);
             rounds[i][ANSWER] = Integer.valueOf(answer).toString();
         }
-        Engine.engine(TASK, rounds);
+        Engine.playGame(TASK, rounds);
     }
 
     private static int calculateGSD(int numberOne, int numberTwo) {

@@ -17,7 +17,7 @@ public class Even {
             rounds[i][QUESTION] = Integer.toString(number);
             rounds[i][ANSWER] = isEven(number) ? "yes" : "no";
         }
-        Engine.engine(TASK, rounds);
+        Engine.playGame(TASK, rounds);
     }
     private static boolean isEven(int number) {
         return number % 2 == 0;

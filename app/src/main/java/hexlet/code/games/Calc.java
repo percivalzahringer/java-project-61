@@ -15,13 +15,13 @@ public class Calc {
         char[] operation = new char[] {'+', '-', '*'};
 
         for (int i = 0; i < rounds.length; i++) {
-            var firstNumber = Generator.getRandomInt(MIN, MAX);
-            var secondNumber = Generator.getRandomInt(MIN, MAX);
-            char operator = operation[Generator.getRandomInt(MIN, MAX_OPERATION)];
+            int firstNumber = generateRandomNumber();
+            int secondNumber = generateRandomNumber();
+            char operator = generateRandomOperator();
             rounds[i][QUESTION] = generateOperation(firstNumber, operator, secondNumber);
-            rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operator);
+            rounds[i][ANSWER] = Integer.toString(calculate(firstNumber, secondNumber, operator));
         }
-        Engine.engine(TASK, rounds);
+        Engine.playGame(TASK, rounds);
     }
 
     private static String generateOperation(int firstNumber, char operator, int secondNumber) {
@@ -42,22 +42,32 @@ public class Calc {
         }
         return result;
     }
-    private static String calculate(int firstNumber, int secondNumber, char operator) {
-        String result;
+    private static int calculate(int firstNumber, int secondNumber, char operator) {
+        int result = 0;
 
         switch (operator) {
             case '+':
-                result = Integer.valueOf(firstNumber + secondNumber).toString();
+                result = firstNumber + secondNumber;
                 break;
             case '-':
-                result = Integer.valueOf(firstNumber - secondNumber).toString();
+                result = firstNumber - secondNumber;
                 break;
             case '*':
-                result = Integer.valueOf(firstNumber * secondNumber).toString();
+                result = firstNumber * secondNumber;
                 break;
             default:
                 throw new RuntimeException("Unknown input: " + operator);
         }
         return  result;
+    }
+
+    private static int generateRandomNumber() {
+        return (int) (Math.random() * 100);
+    }
+
+    private static char generateRandomOperator() {
+        char[] operators = {'+', '-', '*'};
+        int randomIndex = (int) (Math.random() * operators.length);
+        return operators[randomIndex];
     }
 }

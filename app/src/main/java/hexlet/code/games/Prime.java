@@ -18,7 +18,7 @@ public class Prime {
             rounds[i][QUESTION] = Integer.toString(number);
             rounds[i][ANSWER] = isNumberPrime ? "yes" : "no";
         }
-        Engine.engine(TASK, rounds);
+        Engine.playGame(TASK, rounds);
     }
     private static boolean isPrime(int number) {
         if (number < 2) {

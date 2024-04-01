@@ -26,19 +26,14 @@ public class Progression {
             aps[missedNumber] = "..";
             rounds[i][QUESTION] = String.join(" ", aps);
         }
-        Engine.engine(TASK, rounds);
+        Engine.playGame(TASK, rounds);
     }
 
     private static String[] generateArray(int arraySize, int step, int firstNumber) {
-        int[] numbers = new int[arraySize];
-        numbers[0] = firstNumber;
         String[] numbersToString = new String[arraySize];
-        numbersToString[0] = Integer.toString(numbers[0]);
-        for (int i = 1; i < arraySize; i++) {
-            numbers[i] = numbers[i - 1] + step;
-            numbersToString[i] = Integer.toString(numbers[i]);
+        for (int i = 0; i < arraySize; i++) {
+            numbersToString[i] = Integer.toString(firstNumber + i * step);
         }
         return numbersToString;
-
     }
 }
