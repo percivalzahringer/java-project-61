@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Generator;
 
 public class Calc {
     public static final String TASK = "What is the result of the expression?";
@@ -62,7 +61,7 @@ public class Calc {
     }
 
     private static int generateRandomNumber() {
-        return (int) (Math.random() * 100);
+        return (int) (Math.random() * MAX);
     }
 
     private static char generateRandomOperator() {
